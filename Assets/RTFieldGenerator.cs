@@ -20,6 +20,7 @@ public class RTFieldGenerator : MonoBehaviour
         {
             StartCoroutine(MakeAndScaleHexagons());
             CameraShake.S.shake = 1.0f;
+            ScreenFader.S.Flash();
         }
     }
 

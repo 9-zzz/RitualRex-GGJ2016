@@ -11,6 +11,7 @@ public class ScreenFader : MonoBehaviour {
     void Awake()
     {
         S = this;
+        imageToWork = GetComponent<Image>();
     }
 
 	// Use this for initialization
@@ -21,14 +22,21 @@ public class ScreenFader : MonoBehaviour {
 	
 	}
 
-    void Flash()
+    public void Flash()
     {
-        imageToWork.CrossFadeAlpha(0.9f, 0.10f, true);
-        imageToWork.CrossFadeAlpha(0.0f, 0.10f, true);
+        StartCoroutine(FlashCo());
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    IEnumerator FlashCo()
+    {
+        imageToWork.CrossFadeAlpha(0.9f, 0.25f, true);
+        yield return new WaitForSeconds(0.25f);
+        imageToWork.CrossFadeAlpha(0.0f, 0.25f, true);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
