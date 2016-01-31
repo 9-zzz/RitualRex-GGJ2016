@@ -44,6 +44,7 @@ ModelImporter:
     7400002: Idle
     7400004: Idle0
     7400006: Walk
+    7400008: Melee_1
     9500000: //RootNode
     13700000: Cylinder
   materials:
@@ -68,10 +69,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
-      takeName: Walk
+      name: Melee_1
+      takeName: Melee_1
       firstFrame: -1
-      lastFrame: 80
+      lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
