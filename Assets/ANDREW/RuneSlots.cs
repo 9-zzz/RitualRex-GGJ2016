@@ -35,6 +35,8 @@ public class RuneSlots : MonoBehaviour {
     private int[] correctRunes = new int[9];
     public int activeRune = 0;
     public Sprite[] runeTextures = new Sprite[8];
+    public Sprite[] ingredientTextures = new Sprite[6];
+    public Sprite[] symbolTextures = new Sprite[9];
 
     public bool circleActive = false;
 
@@ -88,7 +90,44 @@ public class RuneSlots : MonoBehaviour {
         {
 
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            numCandles += 1;
+            postMessage("Candles: " + numCandles);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            numCandles -= 1;
+            postMessage("Candles: " + numCandles);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            numObelisks += 1;
+            postMessage("Obelisks: " + numObelisks);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            numObelisks -= 1;
+            postMessage("Obelisks: " + numObelisks);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            for (int i = 0; i < numObelisks; i++)
+            {
+                obeliskFaceTowards[i] = true;
+            }
+            postMessage("Obelisks facing towards you");
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            for (int i = 0; i < numObelisks; i++)
+            {
+                obeliskFaceTowards[i] = false;
+            }
+            postMessage("Obelisks facing away from you");
+        }
+    }
 
     public void setActiveRune(int rune)
     {
@@ -113,13 +152,36 @@ public class RuneSlots : MonoBehaviour {
         activeRune = (activeRune + 1) % runeIds.Length;
     }
 
-    //Returns whether activation was a success (fails if ritual is not configured correctly!)
-    public bool activateRitual(int id, string incantation)
+    public void addIngredient(int id)
+    {
+        if (numIngredients < MAX_INGREDIENTS)
+        {
+            ingredientIds[numIngredients] = id;
+            numIngredients += 1;
+        }
+    }
+
+    public void removeIngredient(int type)
+    {
+        for(int i=0;i<numIngredients;i++)
+        {
+            if (ingredientIds[i] == type)
+            {
+                for (int j = i; j < numIngredients - 1; j++)
+                    ingredientIds[j] = ingredientIds[j + 1];
+                numIngredients -= 1;
+                break;
+            }
+        }
+    }
+
+    public bool activateRitual(string incantation)
     {
         bool doublePotency = false; //Ritual should be twice as strong.
 
         //Check Incantation
-        if (!VerifyIncantation(id, incantation)) {
+        int id = VerifyIncantation(incantation);
+        if (id == -1) {
             postMessage("Invalid Incantation.");
             return false;
         }
@@ -352,7 +414,8 @@ public class RuneSlots : MonoBehaviour {
 
     public void postMessage(string msg)
     {
-        //TODO??
+        //TODO
+        Debug.Log(msg);
     }
 
     public void postRandomize()
@@ -499,55 +562,49 @@ public class RuneSlots : MonoBehaviour {
         }
     }
 
-    private bool VerifyIncantation(int id, string incantation)
+    private int VerifyIncantation(string incantation)
     {
         string filtered = incantation.ToLower();
-        if (id == SHIELD)
-        {
+
             switch(focalSymbol)
             {
-                case 0: if (filtered == "ihalotua") return true; break;
-                case 1: if (filtered == "phoraqur") return true; break;
-                case 2: if (filtered == "lethodar") return true; break;
-                case 3: if (filtered == "dolibix") return true; break;
-                case 4: if (filtered == "donumeo") return true; break;
-                case 5: if (filtered == "holasil") return true; break;
-                case 6: if (filtered == "akular") return true; break;
-                case 7: if (filtered == "ygosanyo") return true; break;
-                case 8: if (filtered == "somatha") return true; break;
+                case 0: if (filtered == "ihalotua") return SHIELD; break;
+                case 1: if (filtered == "phoraqur") return SHIELD; break;
+                case 2: if (filtered == "lethodar") return SHIELD; break;
+                case 3: if (filtered == "dolibix") return SHIELD; break;
+                case 4: if (filtered == "donumeo") return SHIELD; break;
+                case 5: if (filtered == "holasil") return SHIELD; break;
+                case 6: if (filtered == "akular") return SHIELD; break;
+                case 7: if (filtered == "ygosanyo") return SHIELD; break;
+                case 8: if (filtered == "somatha") return SHIELD; break;
             }
-        }
-        else if (id == BANISH)
-        {
+
             switch (focalSymbol)
             {
-                case 0: if (filtered == "athomiqu") return true; break;
-                case 1: if (filtered == "shlotam") return true; break;
-                case 2: if (filtered == "seororel") return true; break;
-                case 3: if (filtered == "tasarak") return true; break;
-                case 4: if (filtered == "guthaatel") return true; break;
-                case 5: if (filtered == "krorolyb") return true; break;
-                case 6: if (filtered == "unithocl") return true; break;
-                case 7: if (filtered == "madulic") return true; break;
-                case 8: if (filtered == "pytrores") return true; break;
+                case 0: if (filtered == "athomiqu") return BANISH; break;
+                case 1: if (filtered == "shlotam") return BANISH; break;
+                case 2: if (filtered == "seororel") return BANISH; break;
+                case 3: if (filtered == "tasarak") return BANISH; break;
+                case 4: if (filtered == "guthaatel") return BANISH; break;
+                case 5: if (filtered == "krorolyb") return BANISH; break;
+                case 6: if (filtered == "unithocl") return BANISH; break;
+                case 7: if (filtered == "madulic") return BANISH; break;
+                case 8: if (filtered == "pytrores") return BANISH; break;
             }
-        }
-        else
-        {
+
             switch (focalSymbol)
             {
-                case 0: if (filtered == "xe'actois") return true; break;
-                case 1: if (filtered == "it'amalism") return true; break;
-                case 2: if (filtered == "er'aresi") return true; break;
-                case 3: if (filtered == "kil-chandhu") return true; break;
-                case 4: if (filtered == "far'ilursi") return true; break;
-                case 5: if (filtered == "ybais-ilul") return true; break;
-                case 6: if (filtered == "dalc'itep") return true; break;
-                case 7: if (filtered == "oth-ephoggg") return true; break;
-                case 8: if (filtered == "yr'poraz") return true; break;
+                case 0: if (filtered == "xe'actois") return ATTACK; break;
+                case 1: if (filtered == "it'amalism") return ATTACK; break;
+                case 2: if (filtered == "er'aresi") return ATTACK; break;
+                case 3: if (filtered == "kil-chandhu") return ATTACK; break;
+                case 4: if (filtered == "far'ilursi") return ATTACK; break;
+                case 5: if (filtered == "ybais-ilul") return ATTACK; break;
+                case 6: if (filtered == "dalc'itep") return ATTACK; break;
+                case 7: if (filtered == "oth-ephoggg") return ATTACK; break;
+                case 8: if (filtered == "yr'poraz") return ATTACK; break;
             }
-        }
-        return false;
+        return -1;
     }
 
     public static bool flipCoin()
