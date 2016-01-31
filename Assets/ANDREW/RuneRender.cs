@@ -17,5 +17,5 @@ public class RuneRender : MonoBehaviour {
             this.GetComponent<SpriteRenderer>().sprite = RuneSlots.S.runeTextures[sid];
         else
             this.GetComponent<SpriteRenderer>().sprite = null;
-	}
+    }
 }

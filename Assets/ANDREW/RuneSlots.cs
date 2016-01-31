@@ -48,6 +48,8 @@ public class RuneSlots : MonoBehaviour {
     public bool[] ringClockwise;
     public int particleShape; //0 - sphere, 1 - cube
 
+    public int openMenu = 0;
+
 
     void Awake()
     {
@@ -92,6 +94,11 @@ public class RuneSlots : MonoBehaviour {
     {
         runeIds[activeRune] = rune;
         nextActiveRune();
+    }
+
+    public void setOpenMenu(int menu)
+    {
+        openMenu = menu;
     }
 
     public void prevActiveRune()
