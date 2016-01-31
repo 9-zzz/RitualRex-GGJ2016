@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000001, guid: 0ed68419545c96340bac64dce8c9f7e0,
+  m_LightingDataAsset: {fileID: 112000001, guid: e62cb0b50f05dbd46adbbc32f97c2911,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -3277,7 +3277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &545458895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,8 +4193,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623485310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.017688757, y: 0, z: 0, w: 0.9998436}
+  m_LocalPosition: {x: 0, y: 1.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
