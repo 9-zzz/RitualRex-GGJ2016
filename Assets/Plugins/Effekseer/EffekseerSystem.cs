@@ -131,7 +131,7 @@ public class EffekseerSystem : MonoBehaviour
 		// 拡張子を除外する
 		name = Path.GetFileNameWithoutExtension(name);
 		
-		if (effectList.ContainsKey(name) == false) {
+		if (effectList.ContainsKey(name) != false) {
 			return effectList[name];
 		}
 		

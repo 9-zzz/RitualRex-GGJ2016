@@ -13,7 +13,7 @@ public class RuneRender : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int sid = RuneSlots.S.runeIds[myId];
-        if (sid != -1)
+        if (sid != -1 && !RuneSlots.S.circleActive)
             this.GetComponent<SpriteRenderer>().sprite = RuneSlots.S.runeTextures[sid];
         else
             this.GetComponent<SpriteRenderer>().sprite = null;

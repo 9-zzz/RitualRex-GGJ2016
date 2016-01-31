@@ -96,6 +96,7 @@ GameObject:
   - 4: {fileID: 26570074}
   - 198: {fileID: 26570073}
   - 199: {fileID: 26570072}
+  - 114: {fileID: 26570075}
   m_Layer: 0
   m_Name: ritualFire
   m_TagString: Untagged
@@ -1616,6 +1617,17 @@ Transform:
   - {fileID: 1885456948}
   m_Father: {fileID: 1537209791}
   m_RootOrder: 0
+--- !u!114 &26570075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 26570071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274059e28aed1c04db33eaaf243614ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &80696698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1735,61 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: aa317ece30ff05643b318d568a3b2ab1, type: 3}
   m_PrefabInternal: {fileID: 1670073152}
+--- !u!1 &187134094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 187134095}
+  - 114: {fileID: 187134096}
+  - 114: {fileID: 187134097}
+  m_Layer: 0
+  m_Name: MagicStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &187134095
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187134094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 845960604}
+  m_RootOrder: 9
+--- !u!114 &187134096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187134094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: tempMagicCircle
+  playOnStart: 0
+  loop: 0
+--- !u!114 &187134097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187134094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560d70abf2d99e045994136292ebeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alchemyCirclePart: 0
 --- !u!1 &198667941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1965,61 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a29564db6ac8f8f4883eea0f6c0356c5, type: 3}
   m_PrefabInternal: {fileID: 1806370608}
+--- !u!1 &273455594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 273455595}
+  - 114: {fileID: 273455597}
+  - 114: {fileID: 273455596}
+  m_Layer: 0
+  m_Name: InnerRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &273455595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273455594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 845960604}
+  m_RootOrder: 11
+--- !u!114 &273455596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273455594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560d70abf2d99e045994136292ebeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alchemyCirclePart: 2
+--- !u!114 &273455597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273455594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: 3pointstar
+  playOnStart: 0
+  loop: 0
 --- !u!1 &277896855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,6 +3837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c508ced1d1392c14eb4921d3ad2b024e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numPoints: 0
+  numRings: 0
+  inscribedRings: 
+  colorID: 0
   runeIds: 000000000000000000000000000000000000000000000000000000000000000000000000
   activeRune: 0
   runeTextures:
@@ -3726,6 +3852,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4ec58905dd11dcb4995229085c28114a, type: 3}
   - {fileID: 21300000, guid: c5e3a684f537b544888bdd8ac6df849f, type: 3}
   - {fileID: 21300000, guid: e9b63179b85b9c445b6b807f7f29689b, type: 3}
+  circleActive: 0
+  focalSymbol: 0
+  ingredientIds: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  obeliskFaceTowards: 00000000
+  numObelisks: 0
+  numCandles: 0
+  numIngredients: 0
+  ringClockwise: 
+  particleShape: 0
 --- !u!4 &764614375
 Transform:
   m_ObjectHideFlags: 0
@@ -3885,7 +4020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectName: tempMagicCircle
+  effectName: runeRings
   playOnStart: 1
   loop: 1
 --- !u!4 &845960604
@@ -3907,6 +4042,10 @@ Transform:
   - {fileID: 280986451}
   - {fileID: 545458896}
   - {fileID: 1526627347}
+  - {fileID: 187134095}
+  - {fileID: 2093093823}
+  - {fileID: 273455595}
+  - {fileID: 1094231284}
   m_Father: {fileID: 0}
   m_RootOrder: 11
 --- !u!4 &857554970 stripped
@@ -4211,6 +4350,61 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1033308327}
+--- !u!1 &1094231283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1094231284}
+  - 114: {fileID: 1094231286}
+  - 114: {fileID: 1094231285}
+  m_Layer: 0
+  m_Name: TertiaryRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094231284
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094231283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 845960604}
+  m_RootOrder: 12
+--- !u!114 &1094231285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094231283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560d70abf2d99e045994136292ebeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alchemyCirclePart: 3
+--- !u!114 &1094231286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094231283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: 3pointstar
+  playOnStart: 0
+  loop: 0
 --- !u!1001 &1101470606
 Prefab:
   m_ObjectHideFlags: 0
@@ -4279,6 +4473,7 @@ GameObject:
   - 4: {fileID: 1124056636}
   - 198: {fileID: 1124056635}
   - 199: {fileID: 1124056634}
+  - 114: {fileID: 1124056637}
   m_Layer: 0
   m_Name: ritualFire
   m_TagString: Untagged
@@ -5799,6 +5994,17 @@ Transform:
   - {fileID: 1772306132}
   m_Father: {fileID: 1537209791}
   m_RootOrder: 1
+--- !u!114 &1124056637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124056633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274059e28aed1c04db33eaaf243614ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201942406
 GameObject:
   m_ObjectHideFlags: 0
@@ -11407,6 +11613,61 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013631406}
+--- !u!1 &2093093822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2093093823}
+  - 114: {fileID: 2093093825}
+  - 114: {fileID: 2093093824}
+  m_Layer: 0
+  m_Name: OuterRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2093093823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093093822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 845960604}
+  m_RootOrder: 10
+--- !u!114 &2093093824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093093822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560d70abf2d99e045994136292ebeab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alchemyCirclePart: 1
+--- !u!114 &2093093825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093093822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectName: 3pointstar
+  playOnStart: 0
+  loop: 0
 --- !u!1 &2097519001
 GameObject:
   m_ObjectHideFlags: 0

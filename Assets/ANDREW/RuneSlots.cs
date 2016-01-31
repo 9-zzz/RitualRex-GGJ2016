@@ -59,7 +59,10 @@ public class RuneSlots : MonoBehaviour {
         for (int i = 0; i < 9; i++)
             runeIds[i] = -1;
 
-        numPoints = 3 + Random.Range(0, 8);
+        do
+        {
+            numPoints = 3 + Random.Range(0, 8);
+        } while (numPoints == 7);
         numRings = 2 + Random.Range(0, 2);
         inscribedRings = new bool[numRings];
         ringClockwise = new bool[numRings];
@@ -93,7 +96,9 @@ public class RuneSlots : MonoBehaviour {
 
     public void prevActiveRune()
     {
-        activeRune = (activeRune - 1) % runeIds.Length;
+        activeRune -= 1;
+        if (activeRune < 0)
+            activeRune = runeIds.Length - 1;
     }
 
     public void nextActiveRune()
